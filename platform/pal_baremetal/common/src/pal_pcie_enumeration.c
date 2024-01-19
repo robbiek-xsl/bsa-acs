@@ -36,6 +36,92 @@ uint32_t g_bar32_p_max;
 uint32_t g_np_bar_size = 0, g_p_bar_size = 0;
 uint32_t g_np_bus = 0, g_p_bus = 0;
 
+PCIE_ROOT_TABLE pcie_root_table = {
+    .num_entries = ROOT_PORT_COUNT,
+#if ROOT_PORT_COUNT > 0
+    .block[0].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_0,
+    .block[0].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_0,
+    .block[0].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_0,
+    .block[0].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_0,
+    .block[0].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_0,
+    .block[0].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_0,
+    .block[0].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_0,
+    .block[0].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_0,
+#endif
+#if ROOT_PORT_COUNT > 1
+    .block[1].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_1,
+    .block[1].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_1,
+    .block[1].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_1,
+    .block[1].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_1,
+    .block[1].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_1,
+    .block[1].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_1,
+    .block[1].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_1,
+    .block[1].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_1,
+#endif
+#if ROOT_PORT_COUNT > 2
+    .block[2].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_2,
+    .block[2].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_2,
+    .block[2].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_2,
+    .block[2].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_2,
+    .block[2].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_2,
+    .block[2].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_2,
+    .block[2].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_2,
+    .block[2].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_2,
+#endif
+#if ROOT_PORT_COUNT > 3
+    .block[3].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_3,
+    .block[3].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_3,
+    .block[3].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_3,
+    .block[3].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_3,
+    .block[3].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_3,
+    .block[3].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_3,
+    .block[3].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_3,
+    .block[3].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_3,
+#endif
+#if ROOT_PORT_COUNT > 4
+    .block[4].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_4,
+    .block[4].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_4,
+    .block[4].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_4,
+    .block[4].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_4,
+    .block[4].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_4,
+    .block[4].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_4,
+    .block[4].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_4,
+    .block[4].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_4,
+#endif
+#if ROOT_PORT_COUNT > 5
+    .block[5].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_5,
+    .block[5].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_5,
+    .block[5].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_5,
+    .block[5].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_5,
+    .block[5].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_5,
+    .block[5].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_5,
+    .block[5].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_5,
+    .block[5].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_5,
+#endif
+#if ROOT_PORT_COUNT > 6
+    .block[6].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_6,
+    .block[6].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_6,
+    .block[6].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_6,
+    .block[6].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_6,
+    .block[6].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_6,
+    .block[6].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_6,
+    .block[6].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_6,
+    .block[6].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_6,
+#endif
+#if ROOT_PORT_COUNT > 7
+    .block[7].segment =       PLATFORM_OVERRIDE_ROOT_SEGMENT_VAL_7,
+    .block[7].start_bus_num = PLATFORM_OVERRIDE_ROOT_START_BUS_VAL_7,
+    .block[7].end_bus_num =   PLATFORM_OVERRIDE_ROOT_END_BUS_VAL_7,
+    .block[7].bar64_val =     PLATFORM_OVERRIDE_ROOT_PCIE_BAR64_VAL_7,
+    .block[7].rp_bar64_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR64_VAL_7,
+    .block[7].bar32np_val =   PLATFORM_OVERRIDE_ROOT_PCIE_BAR32NP_VAL_7,
+    .block[7].bar32p_val =    PLATFORM_OVERRIDE_ROOT_PCIE_BAR32P_VAL_7,
+    .block[7].rp_bar32_val =  PLATFORM_OVERRIDE_ROOT_RP_BAR32_VAL_7,
+#endif
+};
+
+PCIE_ROOT_TABLE *g_pcie_root_table = &pcie_root_table;
+
 /**
   @brief   This API reads 32-bit data from PCIe config space pointed by Bus,
            Device, Function and register offset.
@@ -551,6 +637,62 @@ pal_clear_pri_bus()
      }
 }
 
+static
+void find_ecam_by_segment_buses(uint32_t segment, uint32_t start_bus, uint32_t end_bus)
+{
+  uint32_t i = 0;
+
+  while (i < g_pcie_info_table->num_entries)
+  {
+    if ((segment == g_pcie_info_table->block[i].segment_num) &&
+	(start_bus >= g_pcie_info_table->block[i].start_bus_num) &&
+	(end_bus <= g_pcie_info_table->block[i].end_bus_num))
+    {
+      pcie_index = i;
+      break;
+    }
+    i++;
+  }
+}
+
+static
+void pal_pcie_enumerate_roots(void)
+{
+  uint32_t root_index = 0;
+  uint32_t segment, pri_bus, sec_bus, end_bus;
+
+  print(ACS_PRINT_TEST, "\nStarting Root Enumeration \n", 0);
+
+  while (root_index < g_pcie_root_table->num_entries)
+  {
+    segment = g_pcie_root_table->block[root_index].segment;
+    pri_bus = g_pcie_root_table->block[root_index].start_bus_num;
+    end_bus = g_pcie_root_table->block[root_index].end_bus_num;
+
+    find_ecam_by_segment_buses(segment, pri_bus, end_bus);
+
+    g_bar64_p_start  = g_pcie_root_table->block[root_index].bar64_val;
+    g_rp_bar64_value = g_pcie_root_table->block[root_index].rp_bar64_val;
+    g_bar32_np_start = g_pcie_root_table->block[root_index].bar32np_val;
+    g_bar32_p_start  = g_pcie_root_table->block[root_index].bar32p_val;
+    g_rp_bar32_value = g_pcie_root_table->block[root_index].rp_bar32_val;
+
+    sec_bus = pri_bus + 1;
+    pal_pcie_enumerate_device(pri_bus, sec_bus);
+    root_index++;
+  }
+
+  pcie_index = 0;
+  while (pcie_index < g_pcie_info_table->num_entries)
+  {
+      pal_clear_pri_bus();
+      pcie_index++;
+  }
+
+  pcie_index = 0;
+  enumerate = 0;
+}
+
 void pal_pcie_enumerate(void)
 {
     uint32_t pri_bus, sec_bus;
@@ -560,7 +702,13 @@ void pal_pcie_enumerate(void)
          return;
     }
 
-    print(ACS_PRINT_INFO, "\nStarting Enumeration\n", 0);
+    if (g_pcie_root_table->num_entries > 0)
+    {
+         pal_pcie_enumerate_roots();
+         return;
+    }
+
+    print(ACS_PRINT_TEST, "\nStarting Enumeration \n", 0);
     while (pcie_index < g_pcie_info_table->num_entries)
     {
        pri_bus = g_pcie_info_table->block[pcie_index].start_bus_num;

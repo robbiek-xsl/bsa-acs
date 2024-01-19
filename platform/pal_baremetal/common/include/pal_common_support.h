@@ -370,6 +370,25 @@ typedef struct {
 }WD_INFO_TABLE;
 
 /**
+  @brief PCI Express Root Port Table
+**/
+typedef struct {
+  uint32_t segment;       ///< Segment for this RP
+  uint32_t start_bus_num; ///< Start Bus number for this RP
+  uint32_t end_bus_num;   ///< End Bus number for this RP
+  uint64_t bar64_val;     ///< Base address for 64 bit memory region
+  uint64_t rp_bar64_val;  ///< RP base address for 64 bit memory region
+  uint32_t bar32np_val;   ///< Base address for 32 bit non-pref memory region
+  uint32_t bar32p_val;    ///< Base address for 32 bit pref memory region
+  uint32_t rp_bar32_val;  ///< RP base address for 32 bit memory region
+} PCIE_ROOT_BLOCK;
+
+typedef struct {
+  uint32_t num_entries;
+  PCIE_ROOT_BLOCK  block[];
+} PCIE_ROOT_TABLE;
+
+/**
   @brief PCIe Info Table
 **/
 
